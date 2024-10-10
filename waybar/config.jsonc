@@ -1,0 +1,78 @@
+{
+  "layer": "bottom",
+  "mode": "dock",
+  "modules-left": ["cpu", "memory"],
+  "modules-center": [],
+  "modules-right": [
+    "custom/useless",
+    "custom/updates",
+    "network",
+    "backlight",
+    "pulseaudio",
+    "clock",
+    "battery",
+  ],
+
+  "network": {
+    "tooltip": false,
+    "format-wifi": "  {essid}",
+    "format-ethernet": "",
+  },
+  "backlight": {
+    "tooltip": false,
+    "format": "  {}",
+    "interval": 1,
+    "on-scroll-up": "light -A 5",
+    "on-scroll-down": "light -U 5",
+  },
+  "pulseaudio": {
+    "tooltip": false,
+    "scroll-step": 5,
+    "format": "{icon}  {volume}",
+    "format-icons": {
+      "default": ["", "", ""],
+    },
+  },
+  "custom/launcher": {
+    "format": " ",
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 20,
+    },
+    "interval": 1,
+    "format": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": ["", "", "", "", ""],
+  },
+  "cpu": {
+    "interval": 15,
+    "format": " {}",
+    "max-length": 10,
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {}",
+    "max-length": 10,
+  },
+  "custom/useless": {
+    "format": "{} Useless",
+    "exec": "~/.config/waybar/scripts/wdg_useless.sh",
+    "exec-if": "[[ $(pacman -Qdtq | wc -l) != 0 ]]",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "kitty -e sudo pacman -Rns $(pacman -Qdtq)",
+  },
+  "custom/updates": {
+    "format": "{} Update(s)",
+    "exec": "~/.config/waybar/scripts/wdg_updates.sh",
+    "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+    "interval": 1,
+    "tooltip": true,
+    "on-click": "kitty -e sudo pacman -Syu",
+  },
+}
