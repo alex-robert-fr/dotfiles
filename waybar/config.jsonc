@@ -50,12 +50,12 @@
     "format-icons": ["", "", "", "", ""],
   },
   "cpu": {
-    "interval": 15,
+    "interval": 5,
     "format": " {}",
     "max-length": 10,
   },
   "memory": {
-    "interval": 30,
+    "interval": 5,
     "format": " {}",
     "max-length": 10,
   },
