@@ -25,3 +25,5 @@ fi
 unset rc
 
 alias vim=nvim
+
+export PATH=$PATH:/home/x7c00/.spicetify
