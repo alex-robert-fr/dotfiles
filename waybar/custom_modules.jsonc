@@ -1,0 +1,22 @@
+{
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"active": "",
+			"default": "",
+			"empty": ""
+		},
+		"persistent-workspaces": {
+			"*": [1, 2, 3, 4, 5]
+		}
+	},
+	"clock": {
+		// "timezone": "America/New_York",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+	"mpris": {
+		"format": "{title} - {artist}",
+		"format-paused": "<i>{title} - {artist}</i>"
+	}
+}

@@ -1,0 +1,25 @@
+(defpoll spotify_title :interval "1s" "playerctl --player=spotify metadata --format '{{xesam:title}}'")
+
+(defwindow spotify
+  :monitor 0
+  :stacking "bg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :width "600px" :height "100px" :anchor "top center")
+  (spotify_layout))
+
+(defwidget spotify_layout []
+  (box
+    :class "w_spotify"
+    :orientation "vertical"
+    :halign "center"
+    (label :class "title" :text {spotify_title})
+    (box
+      :orientation "horizontal"
+      :halign "center"
+      (label :class "btn-control btn-prev" :text "󰙣")
+      (label :class "btn-control btn-pause" :text "󰏥")
+      (label :class "btn-control btn-next" :text "󰙡")
+    )
+  )
+)
